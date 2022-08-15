@@ -167,9 +167,9 @@ body {
             <li class="list-group-item  bg-dark "><a href="../admin_main.php">Welcome Admin</a></li>
             <li class="list-group-item bg-dark "><a href="#">Manage Courses</a></li>
             <li class="list-group-item bg-dark"><a href="../manage_quiz/manage_quiz.php">Manage Quize</a></li>
-            <li class="list-group-item bg-dark"><a href="">Manage Videos</a></li>
+            <li class="list-group-item bg-dark"><a href="../manage_videos/manage_videos.php">Manage Videos</a></li>
             <li class="list-group-item bg-dark"><a href="">Manage Comments</a></li>
-            <li class="list-group-item bg-dark"><a href="">Manage Users</a></li>
+            <li class="list-group-item bg-dark"><a href="../manage_users/manage_users.php">Manage Users</a></li>
             <li class="list-group-item bg-dark"><a href="">Logout</a></li>
             <li class="list-group-item bg-dark" style="height: 400px;"></li>
           </ul>

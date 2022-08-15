@@ -1,5 +1,6 @@
 <?php 
 	session_start();
+	
  ?>
 
 <!DOCTYPE html>
@@ -106,13 +107,16 @@
 
 	<div class="sidemenu" id="sidebarleftmenu">
 		<ul class="sidemenulist">
-			<li><a href="" class="crossbutton" onclick="closesidemenu()">&times;</a></li>
-			<li style="background-color :orangered;"><a href="" >Home</a></li>
+			<!-- <li><a href="" class="crossbutton" onclick="closesidemenu()">&times;</a></li> -->
+			<!-- <li style="background-color :orangered;"><a href="" >Home</a></li> -->
 
 <?php 
 $con=mysqli_connect('localhost','root');
 mysqli_select_db($con,'uniquedeveloper');
 $course_name=$_GET['course_name'];
+
+
+
 
 //$_GET['course_name'];
 // unset($_GET['course_name']);
@@ -124,7 +128,11 @@ while ($res=mysqli_fetch_array($result)) {
   			<form action="fetch_main_content.php" method="POST">
 
   			<input type="hidden" name="txt1" value="<?php echo $res['id'] ?>">
-			<button  style="background-color: transparent;border: none;text-align:left;color: white;"><li style="width: 300px;"><?php echo $res['topic_name']; ?></li></button>
+			<button  style="background-color: transparent;border: none;text-align:left;color: white;"><li style="width: 300px;">
+			<?php 
+		
+			echo $res['topic_name']; 
+			?></li></button>
 
 			</form>
 			
@@ -144,9 +152,10 @@ while ($res=mysqli_fetch_array($result)) {
 			<p>
 
 			<?php
-
+             
 			if (isset($_SESSION['message'])) {
 				echo $_SESSION['message'];
+				$_SESSION['message']="";
 			}
 
 			  ?>

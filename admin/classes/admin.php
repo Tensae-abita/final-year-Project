@@ -9,7 +9,7 @@
  	public $host="localhost";
  	public $username="root";
  	public $pass="";
- 	public $db_name="uniquedeveloper";
+ 	public $db_name="e-learning";
  	public $conn;
  	public $user_details;
  	public $course_count=0;

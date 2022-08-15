@@ -13,7 +13,7 @@ session_start();
     <link href="https://fonts.googleapis.com/css?family=Aleo" rel="stylesheet">
 
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-	<title>Unique Developer</title>
+	<title>Log in</title>
 	<!----Linking google fonts-->
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
@@ -73,7 +73,7 @@ session_start();
                  <!------Navigation menus starts---->
 				<ul class="nav navbar-nav navbar-right">
 					
-					<li> <a href="" id="our-location" class="btn-success" data-target="#mymodal" data-toggle="modal">Login/Signup</a></li>
+					<li> <a href="" id="our-location" class="btn-success" data-target="#mymodal" data-toggle="modal">Login</a></li>
 				</ul>
 	                 <!------Navigation menus ends---->
 			</div>
@@ -84,18 +84,23 @@ session_start();
 			<section class="slider text-center" id="slider">
 				<div class="modal-dialog ">
 					<div class="modal-content">
-						<h3 id="login-heading">Login</h3>
+					<center>
+						<h3 id="login-heading center">Login</h3>
 						
 					<div class="modal-body" >
-						<div class="left-box">
+						
+
+				
+					<div >
 						<form method="POST" action="validation.php" onsubmit="return validation()">
+						
 							<div class="form-group">
 								<label><i class="fa fa-user fa-2x"></i>Username :</label>
-								<input type="text" autocomplete="off" name="name" class="form-control" id="username" onkeypress="clear()">
+								<input style="width: 250px;" type="text" autocomplete="off" name="name" class="form-control" id="username" onkeypress="clear()">
 							
 
 								<label><i class="fa fa-lock fa-2x"></i>Password :</label>
-								<input type="password" autocomplete="off" name="password" class="form-control" id="password">
+								<input style="width: 220px;" type="password" autocomplete="off" name="password" class="form-control" id="password">
 
 								<span id="perror"><?php 
 								if(isset($_SESSION['error']))
@@ -110,20 +115,11 @@ session_start();
 								<button id="btn-login" type="submit">Login</button>
 								
 							</div>
-							<div class="register">
-								<h2>Don't have an account?&nbsp<span id="create-account"><a href="signup.html">Create</span></a> </h2>
-							</div>
+							
 							
 						</form>
 					</div>
-					<div class="right-box">
-						<span class="signinwith">Sign in With <br> Social Networks</span>
-
-						<button class="social facebook">Log in with Facebook</button>
-						<button class="social twitter">Log in with twitter</button>
-						<button type="submit" class="social google g-signin2" data-onsuccess="onSignIn()">Log in with gmail</button>
-					</div>
-						
+		</center>
 					</div>
 					
 						
@@ -150,10 +146,7 @@ session_start();
          }
     }
     
-    
-    function clear() {
-        document.getElementById('perror').innerHTML="ksdfisdhfg";
-    }
+   
     
     </script>
              <!---confirm password validation end------->

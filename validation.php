@@ -14,7 +14,7 @@ else
 		echo "no connection";
 	}
 
- mysqli_select_db($con,'uniquedeveloper');
+ mysqli_select_db($con,'e-learning');
  $name=$_POST['name'];
  $pass=$_POST['password'];
  $email=$_POST['email'];
@@ -27,17 +27,28 @@ else
  if ($num==1)
   {
 
-  	if ($res['username']=='admin') 
+  	if ($res['type']=='Admin') 
   	{
   		header("location:admin/admin_main.php");
   		
-  	}
-  	else
+  	}else if ($res['type']=='Student') 
   	{
-
- 	$_SESSION['username']=$name;
- 	header('location:index.php');
- 	}
+  		header("location:index.php");
+  		
+  	}else if ($res['type']=='Teacher') 
+  	{
+  		header("location:teacher/teacher.php");
+  		
+  	}else if ($res['type']=='Registrar') 
+  	{
+  		header("location:registrar/registrar.php");
+  		
+  	}else if ($res['type']=='Academic Head') 
+  	{
+  		header("location:academic_head/head.php");
+  		
+  	}
+  	
  }
  else
  {
