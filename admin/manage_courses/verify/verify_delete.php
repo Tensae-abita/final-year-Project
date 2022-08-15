@@ -5,7 +5,7 @@
 
 
        		 $con=mysqli_connect('localhost','root');
-			mysqli_select_db($con,'uniquedeveloper');
+			mysqli_select_db($con,'e-learning');
 
        		$id=$_GET['course_id'];
        		$q="DELETE from courses where id='$id'";

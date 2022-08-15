@@ -90,7 +90,7 @@
            $con=mysqli_connect('localhost','root');
 
 
-      mysqli_select_db($con,'uniquedeveloper');
+      mysqli_select_db($con,'e-learning');
           $course_id=$_GET['course_id'];
           $q="select * from courses where id='$course_id'";
       $result=mysqli_query($con,$q);

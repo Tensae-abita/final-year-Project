@@ -92,7 +92,7 @@
 <?php 
 $con=mysqli_connect('localhost','root');
 
-mysqli_select_db($con,'uniquedeveloper');
+mysqli_select_db($con,'e-learning');
 
     $course_name=$_GET['course_name'];
       $q="select * from videos where course_name='$course_name'";

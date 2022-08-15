@@ -29,22 +29,31 @@ else
 
   	if ($res['type']=='Admin') 
   	{
+		$_SESSION['username'] = $res['username'];
+
   		header("location:admin/admin_main.php");
   		
   	}else if ($res['type']=='Student') 
   	{
+		$_SESSION['username'] = $res['username'];
   		header("location:index.php");
   		
   	}else if ($res['type']=='Teacher') 
   	{
+		$_SESSION['username'] = $res['username'];
+
   		header("location:teacher/teacher.php");
   		
   	}else if ($res['type']=='Registrar') 
   	{
+		$_SESSION['username'] = $res['username'];
+
   		header("location:registrar/registrar.php");
   		
   	}else if ($res['type']=='Academic Head') 
   	{
+		$_SESSION['username'] = $res['username'];
+
   		header("location:academic_head/head.php");
   		
   	}

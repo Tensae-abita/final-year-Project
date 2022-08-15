@@ -7,7 +7,7 @@ class manage_videos_class
  	public $host="localhost";
  	public $username="root";
  	public $pass="";
- 	public $db_name="uniquedeveloper";
+ 	public $db_name="e-learning";
  	public $conn;
  	public $videos_list;
  	

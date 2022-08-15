@@ -7,7 +7,7 @@ class manage_quiz_class
  	public $host="localhost";
  	public $username="root";
  	public $pass="";
- 	public $db_name="uniquedeveloper";
+ 	public $db_name="e-learning";
  	public $conn;
  	public $quiz_course_list;
  	

@@ -3,7 +3,7 @@
 include '../classes/manage_quiz_class.php';
 
 	$con=mysqli_connect('localhost','root');
-	mysqli_select_db($con,'uniquedeveloper');
+	mysqli_select_db($con,'e-learning');
 	if (!$con)
 	 {
 		die('unable to coonect to database');
