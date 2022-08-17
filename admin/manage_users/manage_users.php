@@ -2,7 +2,7 @@
 include("../classes/manage_courses_class.php");
 $courses=new manage_courses_class;			// creating object of  manage_courses_class.php
 $course=$courses->display_courses();    //calling display_courses() method from manage_courses_class.php
-
+session_start();
  ?>
 
 
@@ -128,7 +128,7 @@ body {
  				<!-- navigation bar starts -->
 
   <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
-  <a class="navbar-brand text-white" href="../admin_main.php">Unique Developer</a>
+  <a class="navbar-brand text-white" href="../admin_main.php"><?php echo $_SESSION['username']; ?></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -168,9 +168,9 @@ body {
             <li class="list-group-item bg-dark "><a href="#">Manage Courses</a></li>
             <li class="list-group-item bg-dark"><a href="../manage_quiz/manage_quiz.php">Manage Quize</a></li>
             <li class="list-group-item bg-dark"><a href="../manage_videos/manage_videos.php">Manage Videos</a></li>
-            <li class="list-group-item bg-dark"><a href="">Manage Comments</a></li>
+            
             <li class="list-group-item bg-dark"><a href="../manage_users/manage_users.php">Manage Users</a></li>
-            <li class="list-group-item bg-dark"><a href="">Logout</a></li>
+            <li class="list-group-item bg-dark"><a href="../../logout.php">Logout</a></li>
             <li class="list-group-item bg-dark" style="height: 400px;"></li>
           </ul>
         </div>

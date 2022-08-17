@@ -93,7 +93,7 @@ background: linear-gradient(to right, #F3A183, #EC6F66); /* W3C, IE 10+/ Edge, F
   <body style="background-color:#f1efef">
 
   <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
-  <a class="navbar-brand text-white" href="#">Unique Developer</a>
+  <a class="navbar-brand text-white" href="#"><?php echo $_SESSION['username']; ?></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -143,7 +143,7 @@ background: linear-gradient(to right, #F3A183, #EC6F66); /* W3C, IE 10+/ Edge, F
             <li class="list-group-item bg-dark"><a href="">Manage Comments</a></li>
             <li class="list-group-item bg-dark"><a href="manage_users/manage_users.php">Manage Users</a></li>
 
-            <li class="list-group-item bg-dark"><a href="">Logout</a></li>
+            <li class="list-group-item bg-dark"><a href="../logout.php">Logout</a></li>
             <li class="list-group-item bg-dark" style="height: 400px;"></li>
           </ul>
         </div>

@@ -59,8 +59,11 @@
 
         <div class="col-sm-2 col-md-2 sidebar badge-dark" style="margin:inherit;" id="sidebar" >
          <ul class="list-group text-white sidebar-list">
+         <li class="list-group-item bg-dark"><a href="../registrar.php">Manage Users</a></li>
          <li class="list-group-item bg-dark "><a href="#">Manage Courses</a></li>
-            <li class="list-group-item bg-dark"><a href="../registrar.php">Manage Users</a></li>
+           
+            <li class="list-group-item bg-dark"><a href="../notice/notice.php">manage notice</a></li>
+
             <li class="list-group-item bg-dark"><a href="../../logout.php">Logout</a></li>
 
             <li class="list-group-item bg-dark" style="height: 400px;"></li>

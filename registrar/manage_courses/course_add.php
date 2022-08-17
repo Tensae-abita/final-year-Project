@@ -79,7 +79,7 @@ $filetmp=$languageimg['tmp_name'];
 $fileext=explode('.', $filename);
 $filecheck=strtolower(end($fileext));
 
-$fileextstored= array('png','jpg','jpeg' );
+$fileextstored= array('png','jpg','jpeg' ,'pdf');
 
 if (in_array($filecheck,$fileextstored)) {
 	$destinationfile='uploadimg/'.$filename;
@@ -116,7 +116,7 @@ $filetmp=$courseimg['tmp_name'];
 $fileext=explode('.', $filename);
 $filecheck=strtolower(end($fileext));
 
-$fileextstored= array('png','jpg','jpeg' );
+$fileextstored= array('png','jpg','jpeg','pdf' );
 
 if (in_array($filecheck,$fileextstored)) {
 	$destinationfile='uploadimg/'.$filename;

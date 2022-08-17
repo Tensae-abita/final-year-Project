@@ -525,7 +525,7 @@ if (!isset($_SESSION['username'])) {
 									<div id="collapseTwo" class="panel-collapse collapse" aria-labelledby="headingTwo">
 										<div class="panel-body">
 											<p>
-												Unique Developer is an online E-learning website <br>
+												<?php echo $_SESSION['username']; ?> is an online E-learning website <br>
 												here you can learn programming languages,Tech News and improve your coding skill	
 											</p>
 										</div>

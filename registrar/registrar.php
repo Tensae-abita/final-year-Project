@@ -132,7 +132,7 @@ body {
  				<!-- navigation bar starts -->
 
   <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
-  <a class="navbar-brand text-white" href="../admin_main.php">Unique Developer</a>
+  <a class="navbar-brand text-white" href="../admin_main.php"><?php echo $_SESSION['username']; ?></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -168,10 +168,12 @@ body {
 
         <div class="col-sm-2 col-md-2 sidebar badge-dark" style="margin:inherit;" id="sidebar" >
          <ul class="list-group text-white sidebar-list">
-            
+
+            <li class="list-group-item bg-dark"><a href="">Manage Users</a></li>
             <li class="list-group-item bg-dark "><a href="manage_courses/manage_courses.php">Manage Courses</a></li>
           
-            <li class="list-group-item bg-dark"><a href="#">Manage Users</a></li>
+            
+            <li class="list-group-item bg-dark"><a href="./notice/notice.php">manage notice</a></li>
             <li class="list-group-item bg-dark"><a href="../logout.php">Logout</a></li>
             <li class="list-group-item bg-dark" style="height: 400px;"></li>
           </ul>
@@ -222,9 +224,9 @@ body {
 
 
 
-  <div class="col-md-8">    <!-- list of users starts -->
+  <div >    <!-- list of users starts -->
 
-                <table class="table ml-5 bg-white shodow pl-5 table-responsive" style=" height : 355px;overflow-y: scroll;display: inline-block; width: 640px;"> 
+                <table class="table ml-5 bg-white shodow pl-5 table-responsive" style=" height : 355px;overflow-y: scroll;display: inline-block; width: 80%;"> 
                   
                  <!-- table stsrts  -->  <!--  use table-responsive class -->
                 <p class="ml-5">List of users</p>

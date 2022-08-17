@@ -2,7 +2,7 @@
 include("../classes/manage_quiz_class.php");
 $quiz=new manage_quiz_class;			// creating object of  manage_courses_class.php
     $quiz_list=$quiz->display_quiz_courses();   //calling display_courses() method from manage_courses_class.php
-
+session_start();
  ?>
 
 
@@ -128,7 +128,7 @@ body {
  				<!-- navigation bar starts -->
 
   <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
-  <a class="navbar-brand text-white" href="#">Unique Developer</a>
+  <a class="navbar-brand text-white" href="#"><?php echo $_SESSION['username']; ?></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -184,10 +184,10 @@ body {
             <li class="list-group-item bg-dark "><a href="../manage_courses/manage_courses.php">Manage Courses</a></li>
             <li class="list-group-item bg-dark"><a href="#">Manage Quize</a></li>
             <li class="list-group-item bg-dark"><a href="../manage_videos/manage_videos.php">Manage Videos</a></li>
-            <li class="list-group-item bg-dark"><a href="">Manage Comments</a></li>
+            
             <li class="list-group-item bg-dark"><a href="../manage_users/manage_users.php">Manage Users</a></li>
 
-            <li class="list-group-item bg-dark"><a href="">Logout</a></li>
+            <li class="list-group-item bg-dark"><a href="../../logout.php">Logout</a></li>
             <li class="list-group-item bg-dark" style="height: 400px;"></li>
           </ul>
         </div>
@@ -211,9 +211,9 @@ body {
   <li class="nav-item">
     <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
   </li>
-  <li class="nav-item">
+  <!-- <li class="nav-item">
     <a class="nav-link" data-toggle="tab" href="#manage_course">Manage Quiz</a>
-  </li>
+  </li> -->
   <li class="nav-item">
     <a class="nav-link" data-toggle="tab" href="#menu2">Add Questions</a>
   </li>
@@ -431,204 +431,7 @@ body {
 
 		<!-- manage course pane starts -->
 
-  <div class="tab-pane container fade" id="manage_course">
-  	
-
-
-
-  		<center><div class="col-md-7">
-
-
-<div class="card mt-3 tab-card">
-        <div class="card-header tab-card-header">
-          <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="One" aria-selected="true">ADD</a>
-            </li>
-           <!--  <li class="nav-item">
-                <a class="nav-link" id="two-tab" data-toggle="tab" href="#two" role="tab" aria-controls="Two" aria-selected="false">UPDATE</a>
-            </li> -->
-            <li class="nav-item">
-                <a class="nav-link" id="three-tab" data-toggle="tab" href="#three" role="tab" aria-controls="Three" aria-selected="false">DELETE</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="tab-content" id="myTabContent">   <!-- tab content starts -->
-
-
-        	<!-- ======================================================================================================= -->
-        				<!-- add new video course tab starts -->
-
-          <div class="tab-pane fade show active p-3" id="one" role="tabpanel" aria-labelledby="one-tab">
-
-            <div class="card-body col-md-12">
-            	
-
-
-
-            		<div class="card" style="box-shadow: 2px 2px 2px 2px #dfdfdf;">
-				  <div class="card-header bg-danger text-light p-2 cardh2"><h3>ADD NEW SUBJECT</h3></div>
-				  
-				  <div class="card-body small" ">
-
-				  <form action="quiz_add.php" method="post" enctype="multipart/form-data" onsubmit="return validation()">
-					    <div class="form-group">
-					      <label for="email">Course Name :</label>
-					      <input type="text" class="form-control" id="c_name" placeholder="Enter Subject Name" name="course_name">
-					      <span id="name_error" class="text-danger font-weight-bold"></span>
-					    </div>
-					   
-					    
-					    <div class="">
-					    <button type="submit" class="btn btn-danger"  name="btn_add_quiz_sub">Submit</button>
-						</div>
-				  </form>
-
-				</div>
-			</div>
-            </div>
-          </div>
-          								<!-- add new video course tab ends -->
-				<!-- ======================================================================================================= -->
-
-
-
-
-				<!-- ======================================================================================================= -->
-        								<!-- update video course tab starts -->		
-
-<!-- 
-          <div class="tab-pane fade p-3" id="two" role="tabpanel" aria-labelledby="two-tab">
-           
-            <div class="card-body col-md-12">
-            	
-
-            		<div class="card" style="box-shadow: 2px 2px 2px 2px #dfdfdf;">
-				  <div class="card-header bg-primary text-light p-2 cardh2 "><h3>UPDATE COURSE</h3></div>
-				  
-				  <div class="card-body small" >
-					    
-				 
-
-				 <form action="video_add.php" method="post" enctype="multipart/form-data" onsubmit="">
-
-
-				 	 <div class="form-group">
-
-					    <label for="exampleFormControlSelect1">Select video Course Name :</label>
-					    <select class="form-control" id="exampleFormControlSelect1" name="selected-course-to-update">
-
-					    	<?php  foreach ($video as $course_list)
-							 {
-										?> 
-					      <option><?php echo  $course_list['course_name']; ?></option>
-					      <?php } ?>
-
-					    </select>
-					  </div>
-					   
-					    
-					    <div class="form-group">
-					      <label for="pwd">Course Description</label>
-					      <input type="text" class="form-control" id="c_des" placeholder="Enter Course Description" name="course_desc">
-					      <span id="desc_error" class="text-danger font-weight-bold"></span>
-					    </div>
-
-					     <div class="form-group">
-					      <label for="pwd">Course Image</label>
-					      <input type="file" class="form-control" id="c_im" placeholder="Enter Course Image" name="course_image">
-					      <span id="image_error" class="text-danger font-weight-bold"></span>
-					    </div>
-					    
-					    <div class="">
-					    <button type="submit" class="btn btn-danger"  name="btn_update_vid">Submit</button>
-						</div>
-				  </form>
-
-				</div>
-			</div>
-
-
-            </div>           
-          </div>
- -->
-
-          								<!-- update video course tab ends -->
-				<!-- ======================================================================================================= -->
-
-
-
-				<!-- ======================================================================================================= -->
-        								<!-- delete quiz course tab starts -->		
-
-
-          <div class="tab-pane fade p-3" id="three" role="tabpanel" aria-labelledby="three-tab">
-           
-            <div class="card-body col-md-12">
-            	
-
-
-
-            		<div class="card" style="box-shadow: 2px 2px 2px 2px #dfdfdf;">
-				  <div class="card-header bg-primary text-light p-2 cardh2"><h3>DELETE COURSE</h3></div>
-				  
-				  <div class="card-body small" ">
-
-				  <form action="quiz_add.php" method="post" enctype="multipart/form-data">
-					   <div class="form-group">
-					    <label for="exampleFormControlSelect1">Select Course</label>
-					    <select class="form-control" id="exampleFormControlSelect1" name="selected_course">
-					        <?php 
-								                                   //calling show_courses() method of users class
-								       foreach ($quiz_list as $quiz) 
-								       {
-								         
-								 ?>
-
-								      <option value="<?php echo $quiz['id'] ;?>"><?php echo $quiz['cat_name']; ?></option>    <!-- displaying course name in dropdown -->
-								    
-
-								      <?php
-								}
-
-								      ?>
-					    </select>
-					  </div>
-					   
-					    <div class="float-left">
-					    <button type="submit" class="btn btn-danger" name="btn_delete_quiz_sub">Submit</button>
-						</div>
-				  </form>
-
-				</div>
-			</div>
-
-
-            </div>          
-          </div>
-
-
-
-         									 <!-- delete quiz course tab ends -->
-				<!-- ======================================================================================================= -->
-
-        </div>			<!-- tab content  -->
-      
-
-
-
-
-
-
-
-  				
-  			</div></center>
-
-
-  </div>
-
-
+  
 
   <!-- manage courses pane ends -->
 

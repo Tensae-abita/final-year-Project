@@ -52,7 +52,7 @@ else
   		
   	}else if ($res['type']=='Academic Head') 
   	{
-		$_SESSION['username'] = $res['username'];
+		$_SESSION	['username'] = $res['username'];
 
   		header("location:academic_head/head.php");
   		

@@ -10,7 +10,7 @@ session_start();
 	<link href="https://fonts.googleapis.com/css?family=Aleo" rel="stylesheet">
 
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-	<title>Unique Developer</title>
+	<title>E learning</title>
 	<!----Linking google fonts-->
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 

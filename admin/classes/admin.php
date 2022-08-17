@@ -15,6 +15,7 @@
  	public $course_count=0;
  	public $video_count=0;
  	public $faq_list;
+	public $notice;
 
  	public function __construct()
  	{
@@ -83,6 +84,22 @@
 	public function display_faq_list()
 	{
 		$query="select * from faq";
+ 		$result=$this->conn->query($query);
+ 		
+ 		while($row=$result->fetch_array(MYSQLI_ASSOC))
+ 		{
+ 			// $this->user_details[]=
+ 			$this->faq_list[]=$row;
+ 		}
+ 		// return $this->user_details;
+ 		return ($this->faq_list);
+
+
+
+	}
+	public function display_notice()
+	{
+		$query="select * from notice";
  		$result=$this->conn->query($query);
  		
  		while($row=$result->fetch_array(MYSQLI_ASSOC))
