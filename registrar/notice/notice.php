@@ -132,7 +132,7 @@ body {
  				<!-- navigation bar starts -->
 
   <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
-  <a class="navbar-brand text-white" href="../admin_main.php">Unique Developer</a>
+  <a class="navbar-brand text-white" href="../admin_main.php"><?php  echo $_SESSION['username']; ?></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -173,7 +173,7 @@ body {
             <li class="list-group-item bg-dark "><a href="../manage_courses/manage_courses.php">Manage Courses</a></li>
        
             <li class="list-group-item bg-dark"><a href="">manage notice</a></li>
-            <li class="list-group-item bg-dark"><a href="../logout.php">Logout</a></li>
+            <li class="list-group-item bg-dark"><a href="../../logout.php">Logout</a></li>
             <li class="list-group-item bg-dark" style="height: 400px;"></li>
           </ul>
         </div>
@@ -195,10 +195,10 @@ body {
 
 <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link active" data-toggle="tab" href="#home">Users</a>
+    <a class="nav-link active" data-toggle="tab" href="#home">NOTICES</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" href="#manage_course">Add User</a>
+    <a class="nav-link" data-toggle="tab" href="#manage_course">Add NOTICE</a>
   </li>
  <!--  <li class="nav-item">
     <a class="nav-link" data-toggle="tab" href="#menu2">Menu 2</a>
@@ -228,7 +228,7 @@ body {
                 <table class="table ml-5 bg-white shodow pl-5 table-responsive" style=" height : 355px;overflow-y: scroll;display: inline-block; width: 1640px;"> 
                   
                  <!-- table stsrts  -->  <!--  use table-responsive class -->
-                <p class="ml-5">List of users</p>
+                <p class="ml-5">List of Notices</p>
                 <thead>
                   <tr>
                 
@@ -247,7 +247,11 @@ body {
                      include("../../admin/classes/admin.php");
                      $admin=new admin;
                      $userd=$admin->display_notice();
-                          foreach ($userd as $userdata) {
+                    //  if($userd=null)=> echo 'YOU HAVE NO NOTICES';
+                     
+                      foreach ($userd as $userdata) {
+                     
+                          
                             
                           
                    ?> 
@@ -263,7 +267,7 @@ body {
                     
 
                     <td>
-                    <form action="manage_users/delete_user.php" method="POST">
+                    <form action="./delete_notice.php" method="POST">
                     <input type="hidden" name="id" value="<?php echo $userdata['id']; ?>">
                     <button name="delete" class="btn-danger btn-sm">Delete</button>
                     </form> 
@@ -364,7 +368,7 @@ body {
 				  <form method="POST" action="./add_notice.php" enctype="multipart/form-data"> 
 							<div class="form-group">
 								<label><i class="fa fa-user fa-2x"></i>&nbspnotice name :</label>
-								<input type="text" name="notice_name" class="form-control">
+								<input type="text" name="notice_name" class="form-control" required>
 
 								
 
@@ -373,7 +377,8 @@ body {
 
                                 <div class="form-group">
 					      <label for="pwd">Notice</label>
-					      <input type="file" class="form-control" id="c_img" placeholder="Enter Course Image" name="course_image">
+                <p style="color: red;">please upload .pdf</p>
+					      <input type="file" class="form-control" id="c_img" placeholder="Enter Course Image" name="course_image" required>
 					      
 					    </div>
                 

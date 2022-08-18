@@ -17,17 +17,22 @@ echo $id;
   $sql="SELECT * FROM notice WHERE id='$id'";
   $result=mysqli_query($con,$sql);
   $file=mysqli_fetch_assoc($result);
-  $filepath='uploadimg/'.$file['notices'];
-echo $filepath;
- 
-    header('Content-Type:application/octet-stream');
-    header('Content-Description:File Transfer');
-    header('Content-Description: attachment;filename'.basename($filepath));
-    header('Expires:0');
-    header('Cache-control:must-revalidate');
-    header('Pragma:public');
-    header('Content-length:'.filesize($filepath));
-    readfile('uploadimg/'.$filepath);
+  $filepath='../../uploadimg/'.$file['notices'];
+  echo $filepath;
+ if(file_exists($filepath)){
+
+  header('Content-Type:application/octet-stream');
+  header('Content-Description:File Transfer');
+  header('Content-Disposition: attachment;filename=' .basename($filepath));
+  header('Expires:0');
+  header('Cache-Control:must-revalidate');
+  header('Pragma:public');
+  header('Content-Length:'.filesize('../../uploadimg/'.$file['notices']));
+  readfile('../../uploadimg/'.$file['notices']);
+ }else{
+  echo "not here";
+ }
+
  
  }
  ?>

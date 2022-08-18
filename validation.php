@@ -17,6 +17,7 @@ else
  mysqli_select_db($con,'e-learning');
  $name=$_POST['name'];
  $pass=$_POST['password'];
+ $pass=md5($pass);
  $email=$_POST['email'];
 
  $q="select * from login where username='$name' && password='$pass'";

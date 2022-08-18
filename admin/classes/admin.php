@@ -111,6 +111,35 @@
  		return ($this->faq_list);
 
 	}
+	public function display_upAss()
+	{
+		$query="select * from up_assignment";
+ 		$result=$this->conn->query($query);
+ 		
+ 		while($row=$result->fetch_array(MYSQLI_ASSOC))
+ 		{
+ 			// $this->user_details[]=
+ 			$this->faq_list[]=$row;
+ 		}
+ 		// return $this->user_details;
+ 		return ($this->faq_list);
+
+	}
+	public function display_suAss()
+	{
+		$query="select * from su_assignment";
+ 		$result=$this->conn->query($query);
+ 		
+ 		while($row=$result->fetch_array(MYSQLI_ASSOC))
+ 		{
+ 			// $this->user_details[]=
+ 			$this->faq_list[]=$row;
+ 		}
+ 		// return $this->user_details;
+ 		return ($this->faq_list);
+
+	}
+
 
 }
  ?>

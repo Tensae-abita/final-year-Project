@@ -6,6 +6,7 @@ $dbname = "e-learning";
 
  $name=$_POST['name'];
  $pass=$_POST['password'];
+ $pass-md5($pass);
  $email=$_POST['email'];
  $type=$_POST['UserType'];
   $id=$_POST['id'];

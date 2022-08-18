@@ -22,13 +22,20 @@ print_r($courseimg);
 $fileerror=$courseimg['error'];   
 $filetmp=$courseimg['tmp_name'];
 
+$extension=pathinfo($filename,PATHINFO_EXTENSION);
 
+	$destinationfile='../../uploadimg/'.$filename;
+	if(move_uploaded_file($filetmp,$destinationfile)){
+		$q="insert into notice(notices,description,name) values('$filename','$coursedesc','$coursename')";
+		$r=mysqli_query($con,$q);
 
-	$destinationfile='uploadimg/'.$filename;
-	move_uploaded_file($filetmp,'../../uploadimg/'.$filename);
+	}
+else{
+	echo 'not added';
+}
 
-	$q="insert into notice(notices,description,name) values('$filename','$coursedesc','$coursename')";
-	$r=mysqli_query($con,$q);
+	
+	
 
  if ($r==true) {
  header("location:notice.php?status=added");

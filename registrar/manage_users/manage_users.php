@@ -1,5 +1,5 @@
 <?php 
-include("../classes/manage_courses_class.php");
+include("../../admin/classes/manage_courses_class.php");
 $courses=new manage_courses_class;			// creating object of  manage_courses_class.php
 $course=$courses->display_courses();    //calling display_courses() method from manage_courses_class.php
 session_start();

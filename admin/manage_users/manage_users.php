@@ -220,9 +220,9 @@ body {
 
 
 
-  <div class="col-md-8">    <!-- list of users starts -->
+  <div >    <!-- list of users starts -->
 
-                <table class="table ml-5 bg-white shodow pl-5 table-responsive" style=" height : 355px;overflow-y: scroll;display: inline-block; width: 640px;"> 
+                <table class="table ml-5 bg-white shodow pl-5 table-responsive" style=" height : 355px;overflow-y: scroll;display: inline-block; width: 940px;"> 
                   
                  <!-- table stsrts  -->  <!--  use table-responsive class -->
                 <p class="ml-5">List of users</p>
@@ -234,6 +234,7 @@ body {
                     <th scope="col">Password</th>
                     <th scope="col">email id</th>
                     <th scope="col">Usertype</th>
+                    <th scope="col">Department</th>
 
                   </tr>
                 </thead>
@@ -254,6 +255,7 @@ body {
                     <td><?php echo $userdata['password']; ?></td>
                     <td><?php echo $userdata['email']; ?></td>
                     <td><?php echo $userdata['type']; ?></td>
+                    <td><?php echo $userdata['department']; ?></td>
 
                     <td>
                     <form action="./delete_user.php" method="POST">
@@ -384,6 +386,16 @@ body {
                   <option value="Teacher">Teacher</option>
                   <option value="Registrar">Registrar</option>
                   <option value="Academic Head">Academic Head</option>
+                
+                </select>
+                <label for="">Select department</label>
+                <select name="department">
+                <option value=""></option>
+                  <option value="IT">IT</option>
+                  <option value="IS">IS</option>
+
+                  <option value="CS">CS</option>
+               
                 
                 </select>
                 <button type="submit" class="mt-3 btn btn-danger"  name="btn_add">Submit</button>

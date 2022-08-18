@@ -3,7 +3,7 @@
   include("classes/admin.php");
   $admin=new admin;
   $userd=$admin->show_users();
-
+session_start();
  ?>
 
 <!doctype html>
@@ -140,7 +140,7 @@ background: linear-gradient(to right, #F3A183, #EC6F66); /* W3C, IE 10+/ Edge, F
             <li class="list-group-item bg-dark "><a href="manage_courses/manage_courses.php">Manage Courses</a></li>
             <li class="list-group-item bg-dark"><a href="manage_quiz/manage_quiz.php">Manage Quize</a></li>
             <li class="list-group-item bg-dark"><a href="manage_videos/manage_videos.php">Manage Videos</a></li>
-            <li class="list-group-item bg-dark"><a href="">Manage Comments</a></li>
+          
             <li class="list-group-item bg-dark"><a href="manage_users/manage_users.php">Manage Users</a></li>
 
             <li class="list-group-item bg-dark"><a href="../logout.php">Logout</a></li>
@@ -300,40 +300,7 @@ background: linear-gradient(to right, #F3A183, #EC6F66); /* W3C, IE 10+/ Edge, F
 
 
 
-            <div class="row">     <!-- third row starts -->
-
-              <div class="col-md-8 ml-5">       <!-- FAQ section starts -->
-
-              <table class="table bg-white" style="height : 355px;overflow-y: scroll;display: inline-block; width:640px">
-                  <caption>List of users</caption>
-                  <thead>
-                    <tr>
-                      <th>id</th>
-                      <th scope="col">MANAGE FAQs   <a href="" class="float-right" style="text-decoration: none;">Edit</a></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-
-                    <?php  $faq=$admin->display_faq_list();
-
-                      foreach ($faq as $faq_list)
-                       {
-                          
-                     ?>
-
-                    <tr style="width: 500px;" >
-                      <th><?php echo $faq_list['id']; ?></th>
-                      <td><?php echo $faq_list['faq_title']; ?><br><blockquote class="rounded p-2 text-muted " style="font-size: 13px; background-color: #db6a8f57;"><?php echo $faq_list['faq_description']; ?></blockquote></td>
-                    </tr>
-
-                  <?php } ?>
-                   
-                   
-                  </tbody>
-                </table>
-                </div>    <!-- FAQ section ends -->
-              
-            </div>              <!--   third row starts -->
+                      <!--   third row starts -->
 
 
 
